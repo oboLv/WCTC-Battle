@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace WCTC_Battle.Models
 {
-    public class Weapon
+    public class Sword : IWeapon
     {
+        public Sword()
+        {
+            Name = "Sword";
+        }
+
         public string Name { get; set; }
         public int Power { get; set; }
-
-        public Weapon()
-        {
-            Name = "Weapon";
-        }
     }
 }

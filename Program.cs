@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using WCTC_Battle.Models;
 
 namespace WCTC_Battle
@@ -7,17 +8,21 @@ namespace WCTC_Battle
     {
         static void Main(string[] args)
         {
-            Combatant c1 = new Combatant();
-            c1.Name = "Fighter Fred";
-            c1.Armor.Defense = 10;
-            c1.Weapon.Power = 10;
+            Enemy enemy = new Enemy();
+            enemy.Name = "Angry Ant";
+            enemy.Leather.Defense = 5;
+            enemy.Sword.Power = 5;
 
-            Enemy c2 = new Enemy();
-            c2.Name = "Angry Ant";
-            c2.Armor.Defense = 5;
-            c2.Weapon.Power = 5;
+            // DEPENDENCY INJECTION
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IArmor, Leather>()
+                .AddSingleton<IWeapon, Sword>()
+                .AddSingleton<ICombatant, Fighter>()
+                .BuildServiceProvider();
 
-            c1.Attack(c2);
+            var fighter = serviceProvider.GetService<ICombatant>();
+            
+            fighter.Attack(enemy);
 
         }
     }
