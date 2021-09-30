@@ -17,15 +17,15 @@ namespace WCTC_Battle.Models
             Armor = new Armor();
             Weapon = new Weapon();
         }
-        public void Attack(Combatant c2)
+        public void Attack(Enemy enemy)
         {
-            if (this.Weapon.Power > c2.Armor.Defense)
+            if (this.Weapon.Power > enemy.Armor.Defense)
             {
-                Console.WriteLine($"{this.Name} attacks {c2.Name} with a {this.Weapon.Name}");
+                Console.WriteLine($"{this.Name} attacks {enemy.Name} with a {this.Weapon.Name}");
             }
             else
             {
-                Console.WriteLine($"{c2.Name} blocks the attack by {this.Name} with his {c2.Armor.Name}");
+                Console.WriteLine($"{enemy.Name} dodges the attack by {this.Name}");
             }
         }
     }

@@ -8,12 +8,12 @@ namespace WCTC_Battle
         static void Main(string[] args)
         {
             Combatant c1 = new Combatant();
-            c1.Name = "c1";
+            c1.Name = "Fighter Fred";
             c1.Armor.Defense = 10;
             c1.Weapon.Power = 10;
 
-            Combatant c2 = new Combatant();
-            c2.Name = "c2";
+            Enemy c2 = new Enemy();
+            c2.Name = "Angry Ant";
             c2.Armor.Defense = 5;
             c2.Weapon.Power = 5;
 
