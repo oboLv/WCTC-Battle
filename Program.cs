@@ -18,8 +18,8 @@ namespace WCTC_Battle
                 .AddSingleton<IArmor, Leather>()
                 .AddSingleton<IWeapon, Sword>()
                 .AddSingleton<ICombatant, Fighter>()
+                .AddSingleton<IPotion, HealingPotion>()
                 .BuildServiceProvider();
-            System.Console.WriteLine();
 
             var fighter = serviceProvider.GetService<ICombatant>();
             

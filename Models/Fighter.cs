@@ -10,12 +10,16 @@ namespace WCTC_Battle.Models
     {
         private readonly IArmor _armor;
         private readonly IWeapon _weapon;
+
+        private readonly IPotion _potion;
+        
         public string Name { get; set; }
 
-        public Fighter(IArmor armor, IWeapon weapon)
+        public Fighter(IArmor armor, IWeapon weapon, IPotion potion)
         {
             _armor = armor;
             _weapon = weapon;
+            _potion = potion;
             Name = "Fighter Fred";
         }
         public void Attack(Enemy enemy)
