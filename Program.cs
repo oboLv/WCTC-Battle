@@ -19,6 +19,7 @@ namespace WCTC_Battle
                 .AddSingleton<IWeapon, Sword>()
                 .AddSingleton<ICombatant, Fighter>()
                 .BuildServiceProvider();
+            System.Console.WriteLine();
 
             var fighter = serviceProvider.GetService<ICombatant>();
             
